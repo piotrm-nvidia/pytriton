@@ -40,4 +40,6 @@ jobs:
         python .github/workflows/setup_tritonserver.py
         make install-dev
         pip install -e .[test,dev]
+        cp -r . /tmp/p
+        cd /tmp/p
         make test
