@@ -37,4 +37,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        make install-dev && pip install -e .[test,dev] && make test
+        python pytriton/.github/workflows/setup_tritonserver.py
+        make install-dev
+        pip install -e .[test,dev]
+        make test
